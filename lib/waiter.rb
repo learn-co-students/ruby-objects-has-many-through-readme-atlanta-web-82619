@@ -19,18 +19,23 @@ class Waiter
         Meal.all.select {|meal| meal.waiter == self}
     end
 
+    # def best_tipper
+    #    biggest_tip = 0
+    #    tipper = nil
+    #    self.meals.each do |meal|
+    #     if meal.tip > biggest_tip
+    #         biggest_tip = meal.tip
+    #         tipper = meal.customer
+    #     end
+    #    end
+    #    tipper
+    # end
+
     def best_tipper
-       biggest_tip = 0
-       tipper = nil
-       Meal.all.each do |meal|
-        if meal.tip > biggest_tip
-            biggest_tip = meal.tip
-            tipper = meal.customer
-        end
-       end
-       tipper
+        self.meals.max_by {|meal| meal.tip}.customer
     end
 
 end
  
+
  
