@@ -1,6 +1,9 @@
 class Customer
+    
     attr_reader :name , :age
+    
     @@all = []
+    
   def initialize(name, age)
     @name = name
     @age = age 
@@ -20,8 +23,7 @@ class Customer
   end
 
   def waiters
-    meals.map do |meal|
-        meal.waiter
+    meals.map {|meal| meal.waiter}
     end
   end
 end
