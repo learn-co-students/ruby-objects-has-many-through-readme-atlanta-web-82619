@@ -1,6 +1,9 @@
 class Waiter
+    
     attr_reader :name , :yop
+    
     @@all = []
+    
     def initialize(name, yop)
         @name = name
         @yop = yop
